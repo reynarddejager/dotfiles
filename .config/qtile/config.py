@@ -109,13 +109,13 @@ for i in groups:
 layout_theme = {
     "border_width": 3,
     "margin": 8,
-    "border_focus": '#268bd2',
+    "border_focus": '#FF8000',
     "border_normal": '#073642'
 }
 layouts = [
     layout.MonadTall(**layout_theme),
     layout.Stack(num_stacks=2, **layout_theme),
-    layout.Bsp(**layout_theme)
+    layout.Max(**layout_theme),
 ]
 
 #############################
