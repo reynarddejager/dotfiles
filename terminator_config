@@ -1,0 +1,25 @@
+[global_config]
+  title_use_system_font = False
+  title_font = Noto Mono 11
+[keybindings]
+  split_horiz = <Primary>underscore
+  split_vert = <Primary>bar
+[profiles]
+  [[default]]
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Noto Mono 11
+    use_system_font = False
+    use_theme_colors = True
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]

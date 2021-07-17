@@ -1,1 +1,1 @@
-My dotfiles and preferences.
+Configs & dotfiles
