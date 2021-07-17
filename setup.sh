@@ -81,6 +81,7 @@ then
  mkdir -p $HOME/.processing
  cp processing_preferences $HOME/.processing/preferences.txt
  
+ mkdir -p $HOME/projects/sketchbook
  sudo bash $HOME/apps/processing-3.5.4/install.sh
 fi
 
@@ -89,32 +90,48 @@ printf "\n"
 printf "Installing Postman\n"
 if [ ! -d "$HOME/apps/Postman" ]
 then
- wget -nv "wget https://dl.pstmn.io/download/latest/linux" -O $HOME/apps/postman-latest.tar.gz
+ wget -nv "https://dl.pstmn.io/download/latest/linux" -O $HOME/apps/postman-latest.tar.gz
  tar -zxf $HOME/apps/postman-latest.tar.gz -C $HOME/apps
 fi
 
 # NVM
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-bash $HOME/.nvm/nvm.sh #loads nvm
+printf "\n"
+printf "Installing NVM\n"
+if [ ! -d "$HOME/.nvm" ]
+then
+ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+fi
 
 # NodeJS LTS
+source $HOME/.nvm/nvm.sh
 nvm install --lts
 
 # Docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+printf "\n"
+printf "Installing Docker\n"
+if [ ! -e "/usr/bin/docker" ]
+then
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
-sudo apt update
-sudo apt install -y \
+ echo \
+   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+ sudo apt update
+ sudo apt install -y \
 	docker-ce \
 	docker-ce-cli \
 	containerd.io
+fi
 
 # Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+printf "\n"
+printf "Installing Docker Compose\n"
+if [ ! -e "/usr/local/bin/docker-compose" ]
+then
+ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ sudo chmod +x /usr/local/bin/docker-compose
+fi
 
 # GTK: Default bookmarks
 rm $HOME/.config/gtk-3.0/bookmarks
@@ -128,7 +145,7 @@ echo snap > $HOME/.hidden
 # GNOME Shell
 gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'code_code.desktop', 'terminator.desktop']"
 
-gsettings set org.gnome.shell.extensions.dash-to-dock show-trash true
+gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "RIGHT"
@@ -142,6 +159,7 @@ gsettings set org.gnome.shell.extensions.ding show-volumes false
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"
 
 # TODO: Clone the repo & create a scheduled script to change wallpapers
+mkdir -p $HOME/.local/share/backgrounds
 wget -nv https://gitlab.com/dwt1/wallpapers/-/raw/master/0042.jpg -O $HOME/.local/share/backgrounds/northern-lights.jpg
 gsettings set org.gnome.desktop.background picture-uri "${HOME}/.local/share/backgrounds/northern-lights.jpg"
 
