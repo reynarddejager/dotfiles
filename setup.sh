@@ -133,11 +133,12 @@ then
  sudo chmod +x /usr/local/bin/docker-compose
 fi
 
-# GTK: Default bookmarks
-rm $HOME/.config/gtk-3.0/bookmarks
-echo "file://${HOME}/Downloads" >> $HOME/.config/gtk-3.0/bookmarks
-echo "file://${HOME}/apps" >> $HOME/.config/gtk-3.0/bookmarks
+# Default bookmarks
+echo "file://${HOME}/apps" > $HOME/.config/gtk-3.0/bookmarks
 echo "file://${HOME}/projects" >> $HOME/.config/gtk-3.0/bookmarks
+
+sudo cp user-dirs.conf /etc/xdg/user-dirs.conf
+cp user-dirs.dirs $HOME/.config/user-dirs.dirs
 
 # Nautilus: Hide folders
 echo snap > $HOME/.hidden
