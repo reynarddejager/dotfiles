@@ -64,7 +64,7 @@ sudo snap connect discord:system-observe
 # Chrome
 printf "\n"
 printf "Installing Chrome...\n"
-if [ ! -x /usr/bin/google-chrome ]
+if [ ! -e /usr/bin/google-chrome ]
 then
  wget -nv https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/apps/google-chrome-stable_current_amd64.deb
  sudo dpkg -i $HOME/apps/google-chrome-stable_current_amd64.deb
