@@ -46,7 +46,8 @@ sudo apt install -y \
 	apt-transport-https \
 	ca-certificates \
 	gnupg \
-	lsb-release
+	lsb-release \
+	meld
 
 # Terminator
 mkdir -p $HOME/.config/terminator
