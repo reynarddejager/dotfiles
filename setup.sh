@@ -59,6 +59,7 @@ sudo snap install code --classic
 sudo snap install libreoffice
 sudo snap install spotify
 sudo snap install xmind
+sudo snap install slack
 
 # Chrome
 printf "\n"
