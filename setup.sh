@@ -58,9 +58,7 @@ printf "Installing snaps...\n"
 sudo snap install code --classic
 sudo snap install libreoffice
 sudo snap install spotify
-
-sudo snap install discord
-sudo snap connect discord:system-observe
+sudo snap install xmind
 
 # Chrome
 printf "\n"
