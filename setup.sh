@@ -46,7 +46,8 @@ sudo apt install -y \
 	apt-transport-https \
 	ca-certificates \
 	gnupg \
-	lsb-release
+	lsb-release \
+	meld
 
 # Terminator
 mkdir -p $HOME/.config/terminator
@@ -57,7 +58,8 @@ printf "Installing snaps...\n"
 sudo snap install code --classic
 sudo snap install libreoffice
 sudo snap install spotify
-snap install slack --classic
+sudo snap install xmind
+sudo snap install slack --classic
 
 # Chrome
 printf "\n"
