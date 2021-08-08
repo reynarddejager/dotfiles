@@ -68,6 +68,7 @@ if [ ! -e /usr/bin/google-chrome ]
 then
  wget -nv https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/apps/google-chrome-stable_current_amd64.deb
  sudo dpkg -i $HOME/apps/google-chrome-stable_current_amd64.deb
+ rm $HOME/apps/google-chrome-stable_current_amd64.deb
 fi
 
 # Postman
@@ -128,7 +129,7 @@ cp user-dirs.dirs $HOME/.config/user-dirs.dirs
 # Nautilus: Hide folders
 echo snap > $HOME/.hidden
 
-# GNOME Shell
+# GNOME 
 gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'code_code.desktop', 'terminator.desktop']"
 
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
@@ -141,8 +142,10 @@ gsettings set org.gnome.shell.extensions.ding show-network-volumes false
 gsettings set org.gnome.shell.extensions.ding show-trash false
 gsettings set org.gnome.shell.extensions.ding show-volumes false
 
-# GNOME Desktop
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Super>b']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
 
 # TODO: Clone the repo & create a scheduled script to change wallpapers
 mkdir -p $HOME/.local/share/backgrounds
