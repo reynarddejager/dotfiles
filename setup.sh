@@ -57,9 +57,7 @@ printf "Installing snaps...\n"
 sudo snap install code --classic
 sudo snap install libreoffice
 sudo snap install spotify
-
-sudo snap install discord
-sudo snap connect discord:system-observe
+snap install slack --classic
 
 # Chrome
 printf "\n"
@@ -68,21 +66,6 @@ if [ ! -e /usr/bin/google-chrome ]
 then
  wget -nv https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/apps/google-chrome-stable_current_amd64.deb
  sudo dpkg -i $HOME/apps/google-chrome-stable_current_amd64.deb
-fi
-
-# Processing
-printf "\n"
-printf "Installing Processing v3.5.4...\n"
-if [ ! -d "$HOME/apps/processing-3.5.4" ]
-then
- wget -nv "https://github.com/processing/processing/releases/download/processing-0270-3.5.4/processing-3.5.4-linux64.tgz" -O $HOME/apps/processing-3.5.4-linux64.tgz
- tar -zxf $HOME/apps/processing-3.5.4-linux64.tgz -C $HOME/apps
-
- mkdir -p $HOME/.processing
- cp processing_preferences $HOME/.processing/preferences.txt
- 
- mkdir -p $HOME/projects/sketchbook
- sudo bash $HOME/apps/processing-3.5.4/install.sh
 fi
 
 # Postman
