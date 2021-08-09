@@ -56,7 +56,7 @@ cp terminator_config $HOME/.config/terminator/config
 printf "\n"
 printf "Installing snaps...\n"
 sudo snap install code --classic
-sudo snap install libreoffice
+#sudo snap install libreoffice
 sudo snap install spotify
 sudo snap install xmind
 sudo snap install slack --classic
