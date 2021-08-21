@@ -58,8 +58,18 @@ printf "Installing snaps...\n"
 sudo snap install code --classic
 #sudo snap install libreoffice
 sudo snap install spotify
-sudo snap install xmind
+#sudo snap install xmind // switched to dep, startup is slow and menu's don't work
 sudo snap install slack --classic
+
+# XMind
+printf "\n"
+printf "Installing XMind...\n"
+if [ ! -e /usr/bin/xmind ]
+then
+ wget -nv https://www.xmind.net/zen/download/linux_deb -O $HOME/apps/XMind-for-Linux-amd-64bit_current.deb
+ sudo dpkg -i $HOME/apps/XMind-for-Linux-amd-64bit_current.deb
+ rm $HOME/apps/XMind-for-Linux-amd-64bit_current.deb
+fi
 
 # Chrome
 printf "\n"
@@ -78,6 +88,7 @@ if [ ! -d "$HOME/apps/Postman" ]
 then
  wget -nv "https://dl.pstmn.io/download/latest/linux" -O $HOME/apps/postman-latest.tar.gz
  tar -zxf $HOME/apps/postman-latest.tar.gz -C $HOME/apps
+ rm $HOME/apps/postman-latest.tar.gz
 fi
 
 # NVM
