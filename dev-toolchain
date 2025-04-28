@@ -20,11 +20,18 @@ then
 fi
 
 # VS Code: Install Extensions
-code --install-extension esbenp.prettier-vscode
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension dsznajder.es7-react-js-snippets
-code --install-extension tamasfe.even-better-toml
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension GitHub.copilot
-code --install-extension mhutchie.git-graph
-code --install-extension xabikos.JavaScriptSnippets
+extensions=(
+    esbenp.prettier-vscode
+    dbaeumer.vscode-eslint
+    dsznajder.es7-react-js-snippets
+    tamasfe.even-better-toml
+    ms-azuretools.vscode-docker
+    github.copilot
+    mhutchie.git-graph
+    xabikos.javascriptsnippets
+)
+for extension in "${extensions[@]}"; do
+    if ! code --list-extensions | grep -q "$extension"; then
+        code --install-extension "$extension"
+    fi
+done
