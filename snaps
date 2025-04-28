@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+sudo snap install code --classic
+sudo snap install slack --classic
+
+sudo snap install discord
+sudo snap connect discord:system-observe
+
+sudo snap install libreoffice

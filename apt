@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+packages="
+rcm
+curl
+git
+alacritty
+htop
+fastfetch
+fonts-firacode
+dconf-editor
+tmux
+neovim
+"
+
+sudo apt install -y $(echo $packages)

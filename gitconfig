@@ -1,0 +1,7 @@
+[user]
+	email = reynarddejager@gmail.com
+	name = Reynard de Jager
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main

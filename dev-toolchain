@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+# NVM: Install NVM (Node Version Manager)
+# https://github.com/nvm-sh/nvm
+if [ ! -d "$HOME/.nvm" ]
+then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+fi
+
+if [ -d "$HOME/.nvm" ]
+then
+    # Load NVM
+    . "$NVM_DIR/nvm.sh"
+
+    # Node: Install the latest Node LTS
+    # https://nodejs.org
+    nvm install --lts
+fi
+
+# VS Code: Install Extensions
+code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension tamasfe.even-better-toml
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension GitHub.copilot
+code --install-extension mhutchie.git-graph
+code --install-extension xabikos.JavaScriptSnippets
