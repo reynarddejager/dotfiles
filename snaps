@@ -9,3 +9,6 @@ sudo snap install discord
 sudo snap connect discord:system-observe
 
 sudo snap install libreoffice
+
+# https://github.com/canonical/docker-snap/blob/main/README.md
+sudo snap install docker
