@@ -29,6 +29,8 @@ extensions=(
     github.copilot
     mhutchie.git-graph
     xabikos.javascriptsnippets
+    monokai.theme-monokai-pro-vscode
+    redhat.vscode-yaml
 )
 for extension in "${extensions[@]}"; do
     if ! code --list-extensions | grep -q "$extension"; then
