@@ -13,6 +13,7 @@ fonts-firacode
 dconf-editor
 tmux
 neovim
+cifs-utils
 "
 
 sudo apt install -y $(echo $packages)
