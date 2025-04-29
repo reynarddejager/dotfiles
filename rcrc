@@ -1,2 +1,2 @@
-EXCLUDES="*.md apt snaps ubuntu node-toolchain"
+EXCLUDES="*.md apt snaps ubuntu dev-toolchain"
 DOTFILES_DIRS="$HOME/Projects/dotfiles"
