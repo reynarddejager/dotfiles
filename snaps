@@ -20,3 +20,5 @@ sudo snap install docker
 
 # sudo snap disable docker
 # sudo snap enable docker
+
+sudo snap install postman
