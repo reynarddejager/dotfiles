@@ -1,5 +1,6 @@
 {
   "diffEditor.ignoreTrimWhitespace": true,
+  "docker.dockerPath": "/snap/docker/current/bin/docker",
   "editor.foldingHighlight": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": false,
