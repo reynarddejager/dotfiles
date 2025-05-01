@@ -1,6 +1,7 @@
 {
   "diffEditor.ignoreTrimWhitespace": true,
   "docker.dockerPath": "/snap/docker/current/bin/docker",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.foldingHighlight": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": false,
@@ -17,7 +18,6 @@
   "files.exclude": {
     "**/.git": true,
     "**/.husky": true,
-    "**/.svelte-kit": true,
     "**/.vscode": true,
     "**/dist": true,
     "**/node_modules": true
@@ -34,7 +34,6 @@
   "search.exclude": {
     "**/.git": true,
     "**/.husky": true,
-    "**/.svelte-kit": true,
     "**/.vscode": true,
     "**/dist": true,
     "**/node_modules": true
@@ -43,6 +42,5 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.openPositioning": "last",
   "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
-  "workbench.startupEditor": "none",
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "workbench.startupEditor": "none"
 }
