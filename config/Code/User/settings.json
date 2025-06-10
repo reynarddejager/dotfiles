@@ -1,6 +1,6 @@
 {
+  "containers.containerCommand": "/snap/docker/current/bin/docker",
   "diffEditor.ignoreTrimWhitespace": true,
-  "docker.dockerPath": "/snap/docker/current/bin/docker",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.foldingHighlight": false,
   "editor.fontFamily": "Fira Code",
@@ -25,11 +25,9 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
+  "github.copilot.chat.localeOverride": "en",
   "github.copilot.enable": {
-    "*": true,
-    "markdown": true,
-    "plaintext": false,
-    "scminput": false
+    "*": true
   },
   "search.exclude": {
     "**/.git": true,
