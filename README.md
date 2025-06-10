@@ -30,7 +30,7 @@ Install scripts:
 # Install snap packages:
 ./snaps
 
-# Install Ubuntu & GNOME customisation:
+# Install Ubuntu & GNOME customisations:
 ./ubuntu
 
 # Install Dev toolchain:
