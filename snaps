@@ -3,7 +3,6 @@
 set -e
 
 sudo snap install code --classic
-sudo snap install slack --classic
 
 sudo snap install discord
 sudo snap connect discord:system-observe
@@ -14,11 +13,11 @@ sudo snap install libreoffice
 sudo snap install docker
 
 # Running Docker as normal user
-# sudo addgroup --system docker
-# sudo adduser $USER docker
-# newgrp docker
+sudo addgroup --system docker
+sudo adduser $USER docker
+newgrp docker
 
-# sudo snap disable docker
-# sudo snap enable docker
+sudo snap disable docker
+sudo snap enable docker
 
-sudo snap install postman
+# sudo snap install postman

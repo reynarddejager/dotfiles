@@ -7,7 +7,6 @@
   "editor.fontLigatures": false,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
-  "editor.inlineSuggest.showToolbar": "always",
   "editor.minimap.enabled": false,
   "explorer.autoReveal": false,
   "explorer.compactFolders": false,
@@ -29,6 +28,7 @@
   "github.copilot.enable": {
     "*": true
   },
+  "github.copilot.nextEditSuggestions.enabled": false,
   "search.exclude": {
     "**/.git": true,
     "**/.husky": true,
@@ -36,6 +36,7 @@
     "**/dist": true,
     "**/node_modules": true
   },
+  "terminal.integrated.stickyScroll.enabled": false,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "workbench.editor.enablePreview": false,
   "workbench.editor.openPositioning": "last",

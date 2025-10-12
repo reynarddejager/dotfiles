@@ -21,14 +21,14 @@ fi
 
 # VS Code: Install Extensions
 extensions=(
-    esbenp.prettier-vscode
     dbaeumer.vscode-eslint
-    dsznajder.es7-react-js-snippets
-    tamasfe.even-better-toml
-    ms-azuretools.vscode-containers
+    docker.docker
+    esbenp.prettier-vscode
     github.copilot
+    github.copilot-chat
     mhutchie.git-graph
     monokai.theme-monokai-pro-vscode
+    ms-azuretools.vscode-containers
     redhat.vscode-yaml
 )
 for extension in "${extensions[@]}"; do
