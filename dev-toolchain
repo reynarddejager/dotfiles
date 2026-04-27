@@ -6,7 +6,7 @@ set -e
 # https://github.com/nvm-sh/nvm
 if [ ! -d "$HOME/.nvm" ]
 then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    curl --silent -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 fi
 
 if [ -d "$HOME/.nvm" ]
@@ -19,7 +19,7 @@ then
     nvm install --lts
 fi
 
-# VS Code: Install Extensions
+# Cursor: Install Extensions
 extensions=(
     dbaeumer.vscode-eslint
     docker.docker

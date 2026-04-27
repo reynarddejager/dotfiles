@@ -1,5 +1,4 @@
 {
-  "containers.containerCommand": "/snap/docker/current/bin/docker",
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.foldingHighlight": false,
@@ -15,31 +14,32 @@
   "explorer.confirmPasteNative": false,
   "extensions.ignoreRecommendations": true,
   "files.exclude": {
+    "**/__pycache__": true,
     "**/.git": true,
     "**/.husky": true,
+    "**/.venv": true,
     "**/.vscode": true,
     "**/dist": true,
-    "**/node_modules": true
+    "**/node_modules": true,
   },
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
-  "github.copilot.chat.localeOverride": "en",
-  "github.copilot.enable": {
-    "*": true
-  },
-  "github.copilot.nextEditSuggestions.enabled": false,
   "search.exclude": {
+    "**/__pycache__": true,
     "**/.git": true,
     "**/.husky": true,
+    "**/.venv": true,
     "**/.vscode": true,
     "**/dist": true,
-    "**/node_modules": true
+    "**/node_modules": true,
   },
   "terminal.integrated.stickyScroll.enabled": false,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreview": false,
   "workbench.editor.openPositioning": "last",
   "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "python.defaultInterpreterPath": "/bin/python3",
 }
