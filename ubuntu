@@ -9,42 +9,44 @@ rm -df $HOME/Templates
 rm -df $HOME/Videos
 mkdir -p $HOME/Projects
 
-# Nautilus: Hide the snap folder
-echo snap > $HOME/.hidden
-
-# Nautilus: Remove the "Open in Terminal" context menu
-sudo apt remove nautilus-extension-gnome-terminal -y
-
-# Terminal: Set Alacritty as the default terminal emulator
+# Alacritty as the default terminal
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50 
 sudo update-alternatives --config x-terminal-emulator
 
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alacritty
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-"
 
-# Configure Desktop
+# Power Profile
+powerprofilesctl set performance
+
+# Keyboard Shortcuts
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "[]"
+
+# Desktop
 gsettings set org.gnome.desktop.interface clock-show-date true
+gsettings set org.gnome.desktop.interface enable-hot-corners false
 gsettings set org.gnome.desktop.interface accent-color 'blue'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Yaru-blue-dark'
 
-# Show/Hide Desktop Icons
+# Desktop Icons
 gsettings set org.gnome.shell.extensions.ding show-home false
 gsettings set org.gnome.shell.extensions.ding show-link-emblem false
 gsettings set org.gnome.shell.extensions.ding show-network-volumes false
 gsettings set org.gnome.shell.extensions.ding show-trash false
 gsettings set org.gnome.shell.extensions.ding show-volumes false
 
-# Configure Dock
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed true
+# Dock
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts-network false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock hotkeys-overlay false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts-only-mounted false
 
-# Pin favorite apps to the Dock
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'firefox_firefox.desktop', 'code_code.desktop', 'Alacritty.desktop']"
+# Favorite Apps
+gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'cursor.desktop', 'Alacritty.desktop']"

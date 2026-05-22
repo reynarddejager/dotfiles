@@ -7,13 +7,14 @@ rcm
 curl
 git
 alacritty
-htop
+btop
 fastfetch
 fonts-firacode
 dconf-editor
 tmux
 neovim
 cifs-utils
+gnome-tweaks
 "
 
 sudo apt install -y $(echo $packages)

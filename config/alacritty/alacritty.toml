@@ -2,8 +2,10 @@
 # https://alacritty.org/config-alacritty.html
 
 [window]
-padding	        = { x = 1, y = 1 }
+dimensions      = { columns = 175, lines = 50 }
+padding	        = { x = 5, y = 0 }
 dynamic_padding = true
+opacity		= 0.95
 
 [scrolling]
 multiplier      = 3
@@ -17,7 +19,7 @@ bold_italic     = { family = "Fira Code", style = "Bold Italic" }
 size 		= 12.5
 
 # https://github.com/alacritty/alacritty-theme
-# Colors (Ayu Dark)
+# Theme - Ayu Dark
 [colors.primary]
 background      = '#0A0E14'
 foreground      = '#B3B1AD'

@@ -6,7 +6,7 @@ set -e
 # https://github.com/nvm-sh/nvm
 if [ ! -d "$HOME/.nvm" ]
 then
-    curl --silent -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    curl --silent -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 fi
 
 if [ -d "$HOME/.nvm" ]
@@ -22,17 +22,11 @@ fi
 # Cursor: Install Extensions
 extensions=(
     dbaeumer.vscode-eslint
-    docker.docker
     esbenp.prettier-vscode
-    github.copilot
-    github.copilot-chat
-    mhutchie.git-graph
     monokai.theme-monokai-pro-vscode
-    ms-azuretools.vscode-containers
-    redhat.vscode-yaml
 )
 for extension in "${extensions[@]}"; do
-    if ! code --list-extensions | grep -q "$extension"; then
-        code --install-extension "$extension"
+    if ! cursor --list-extensions | grep -q "$extension"; then
+        cursor --install-extension "$extension"
     fi
 done
